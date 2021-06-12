@@ -1,11 +1,25 @@
 let activeHeartButton = document.querySelectorAll('.ActiveHeart'),
     NoActiveHeartButton = document.querySelectorAll('.NoActiveHeart'),
     heartButtonParent = document.querySelectorAll('.site_content-content-information-main');
-    itemName = document.querySelectorAll('.item_name');
+    itemName = document.querySelectorAll('.item_name'),
+    outCounterFavorites = document.querySelector('.counterFavorites');
     let arrFavorites = [];
 
     let out_arr = document.getElementById('out_arr');
     let str = ' ';
+    let counterFavorites;
+
+function counter(counterFavorites = 0) {
+    counterFavorites++
+    outCounterFavorites.innerHTML = counterFavorites;
+    return(counterFavorites);
+}
+
+function counterMinus(counterFavorites = 0) {
+    counterFavorites--
+    outCounterFavorites.innerHTML = counterFavorites;
+    return(counterFavorites);
+}
 
 function returnMass(arrFavorites) {
     for (let i = 0; i< arrFavorites.length; i++  ) {
@@ -24,6 +38,7 @@ for(elem of heartButtonParent) {
         const target = event.target;
 
         if (target && target.classList.contains('NoActiveHeart')) {
+            counterFavorites = counter(counterFavorites);
             str = ' ';
             target.classList.add('hidden');
             target.parentElement.childNodes[3].classList.remove('hidden');
@@ -37,6 +52,7 @@ for(elem of heartButtonParent) {
         const target = event.target;
 
         if (target && target.classList.contains('ActiveHeart')) {
+            counterFavorites = counterMinus(counterFavorites);
             target.classList.add('hidden');
             target.parentElement.childNodes[1].classList.remove('hidden');
             const index = arrFavorites.indexOf(target.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerHTML);
@@ -113,3 +129,10 @@ document.querySelector('#elastic').oninput = function() {
         })
     }
 }
+
+let favouritesMobile = document.querySelector('.favouritesMobile');
+
+favouritesMobile.addEventListener('click', () => {
+    document.querySelector('.site_content-content-favorites').style.display = 'block';
+    document.querySelector('.elastic').style.display = 'none';
+})
