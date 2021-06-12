@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=PT+Sans&display=swap');
+
+  @font-face {
+    font-family: "PostNoBills";
+    /*src: url(".eot"); /* IE 9 Compatibility Mode */
+    src: /*url(".eot?#iefix")
+        format("embedded-opentype"),*/
+
+      /* IE < 9 */
+        /*url("")
+        format(".woff2"),*/
+      /* Super Modern Browsers */
+        /*url(".woff")
+        format("woff"),*/
+      /* Firefox >= 3.6, any other modern browser */
+        url("/SiteLayout/fonts/postnobillscolombo-regular.ttf")
+        format("truetype");
+      /* Safari, Android, iOS */
+        /*url(".svg#myriadpro-lightsemiext")
+        format("svg"); /* Chrome < 4, Legacy iOS */
+  }
