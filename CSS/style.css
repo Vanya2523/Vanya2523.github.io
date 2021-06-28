@@ -558,19 +558,21 @@
 }
 
 @media (max-width: 1024px) {
-  .site_content-content .site_content-content-favorites {
+  .site_content-content-favorites {
     border-left: 1px solid black;
     padding-left: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .site_content-content .site_content-content-favorites {
+  .site_content-content-favorites {
     display: none;
   }
 }
 
-ul.characters {
+ul.characters,
+ul.chosenCharacteristics,
+ul.charactersMain {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -580,14 +582,19 @@ ul.characters {
   width: 80%;
 }
 
-ul.characters li {
+ul.characters li,
+ul.chosenCharacteristics li,
+ul.charactersMain li {
   width: auto;
   border-radius: 10px;
   margin-left: 10px;
   margin-top: 5px;
+  border: 1px solid black;
 }
 
-ul.characters li a {
+ul.characters li a,
+ul.chosenCharacteristics li a,
+ul.charactersMain li a {
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -597,26 +604,149 @@ ul.characters li a {
           justify-content: center;
 }
 
-ul.characters li a p {
+ul.characters li a p,
+ul.chosenCharacteristics li a p,
+ul.charactersMain li a p {
   color: black;
   font-size: 18px;
   font-family: PT Sans;
   padding: 5px 10px;
 }
 
-ul.characters li.easy-training {
+ul.characters li.hard-training,
+ul.chosenCharacteristics li.hard-training,
+ul.charactersMain li.hard-training {
+  background-color: #FF8C00;
+}
+
+ul.characters li.easy-training,
+ul.chosenCharacteristics li.easy-training,
+ul.charactersMain li.easy-training {
   background-color: #66CAFD;
 }
 
-ul.characters li.long-liver {
+ul.characters li.long-liver,
+ul.chosenCharacteristics li.long-liver,
+ul.charactersMain li.long-liver {
   background-color: #FCCDFC;
 }
 
-ul.characters li.size-average {
+ul.characters li.short-liver,
+ul.chosenCharacteristics li.short-liver,
+ul.charactersMain li.short-liver {
+  background-color: #DC143C;
+}
+
+ul.characters li.size-small,
+ul.chosenCharacteristics li.size-small,
+ul.charactersMain li.size-small {
+  background-color: #008B8B;
+}
+
+ul.characters li.size-average,
+ul.chosenCharacteristics li.size-average,
+ul.charactersMain li.size-average {
   background-color: #FEC902;
 }
 
-ul.characters li.size-large {
+ul.characters li.size-large,
+ul.chosenCharacteristics li.size-large,
+ul.charactersMain li.size-large {
   background-color: #32CD32;
+}
+
+ul#characters {
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: #EBEBEB;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.site-content {
+  padding-top: 50px;
+}
+
+.site-content-heading {
+  margin-top: 30px;
+}
+
+.site-content-heading h1 {
+  font-size: 30px;
+  font-family: PT Sans;
+  color: black;
+}
+
+.site-content-content-characteristics h2 {
+  font-size: 25px;
+  font-family: PT Sans;
+  color: black;
+}
+
+.site-content-content-characteristics ul {
+  margin-top: 10px;
+}
+
+.site-content-content-chosen {
+  margin-top: 30px;
+}
+
+.site-content-content-chosen h2 {
+  font-size: 25px;
+  font-family: PT Sans;
+  color: black;
+}
+
+.site-content-content-chosen ul {
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: #EBEBEB;
+  border-radius: 20px;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.site-content-content-button {
+  margin-top: 30px;
+}
+
+.site-content-content-button button {
+  outline: none;
+  border: 1px solid black;
+  background-color: #005FA3;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border-radius: 10px;
+  padding: 10px 40px;
+}
+
+.site-content-content-button button span {
+  font-size: 18px;
+  font-family: PT Sans;
+  color: black;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.site-content-content-button button:hover {
+  background-color: white;
+}
+
+.site-content-content-button button:active span {
+  color: white;
+}
+
+.content-charactersSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 100px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -64,75 +64,36 @@ for(elem of heartButtonParent) {
     })
 }
 
-let hintsList = document.querySelector('.hints')
-
-for (let i = 0; i < itemName.length; i++  ) {
-    let str = ' ';
-    if (itemName[i] !== undefined) {
-        str += '<li>' + '<p class = "hint">' + itemName[i].innerText + '</p>' + '</li>';
-    }
-    hintsList.innerHTML += str;
-    var hint = document.querySelectorAll('.hint');
-}
-
 let characters = document.querySelectorAll('.character');
 
 characters.forEach((elem) => {
     let str = ' ';
-    if(elem.classList.contains('easy-training')) {
-        str = '<a href = "#">' + '<p>' + 'легкая дрессировка' + '</p>' + '</a>';
+    if(elem.classList.contains('hard-training')) {
+        str = '<a>' + '<p>' + 'сложная дрессировка' + '</p>' + '</a>';
+        elem.innerHTML = str;
+    }
+    else if(elem.classList.contains('easy-training')) {
+        str = '<a>' + '<p>' + 'легкая дрессировка' + '</p>' + '</a>';
         elem.innerHTML = str;
     }
     else if(elem.classList.contains('long-liver')) {
-        str = '<a href = "#">' + '<p>' + 'долгожитель' + '</p>' + '</a>';
+        str = '<a>' + '<p>' + 'долгожитель' + '</p>' + '</a>';
+        elem.innerHTML = str;
+    }
+    else if(elem.classList.contains('short-liver')) {
+        str = '<a>' + '<p>' + 'краткожитель' + '</p>' + '</a>';
+        elem.innerHTML = str;
+    }
+    else if(elem.classList.contains('size-small')) {
+        str = '<a>' + '<p>' + 'размер маленький' + '</p>' + '</a>';
         elem.innerHTML = str;
     }
     else if(elem.classList.contains('size-average')) {
-        str = '<a href = "#">' + '<p>' + 'размер средний' + '</p>' + '</a>';
+        str = '<a>' + '<p>' + 'размер средний' + '</p>' + '</a>';
         elem.innerHTML = str;
     }
     else if(elem.classList.contains('size-large')) {
-        str = '<a href = "#">' + '<p>' + 'размер большой' + '</p>' + '</a>';
+        str = '<a>' + '<p>' + 'размер большой' + '</p>' + '</a>';
         elem.innerHTML = str;
     }
-})
-
-document.querySelector('#elastic').oninput = function() {
-    var val = this.value.trim();
-    let elasticItems = document.querySelectorAll('.elastic li.elastic_item');
-    if (val != '') {
-        document.querySelector('.search-content-input-hints').style.display = 'block';
-        hint.forEach((elem) => {
-            if(elem.innerText.search(val) == -1) {
-                elem.classList.add('hidden');
-            }
-            else {
-                elem.classList.remove('hidden');
-            }
-        });
-        if(elem.innerText.search(val) == -1) {
-            document.querySelector('.search-content-input-hints').style.display = 'none';
-        }
-        elasticItems.forEach((elem) => {
-            if(elem.querySelector('.item_name').innerText.search(val) == -1) {
-                elem.classList.add('hidden');
-            }
-            else {
-                elem.classList.remove('hidden');
-            }
-        });
-    }
-    else {
-        document.querySelector('.search-content-input-hints').style.display = 'none';
-        elasticItems.forEach((elem) => {
-            elem.classList.add('hidden');
-        })
-    }
-}
-
-let favouritesMobile = document.querySelector('.favouritesMobile');
-
-favouritesMobile.addEventListener('click', () => {
-    document.querySelector('.site_content-content-favorites').style.display = 'block';
-    document.querySelector('.elastic').style.display = 'none';
 })
