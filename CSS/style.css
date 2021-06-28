@@ -663,6 +663,15 @@ ul#characters {
   width: 50%;
 }
 
+@media (max-width: 426px) {
+  ul#characters {
+    width: 80%;
+  }
+  ul.chosenCharacteristics {
+    width: 80% !important;
+  }
+}
+
 .site-content {
   padding-top: 50px;
 }

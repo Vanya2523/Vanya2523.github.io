@@ -496,6 +496,15 @@
     border-radius: 20px;
     width: 50%;
   }
+
+  @media (max-width: 426px) {
+    ul#characters {
+      width: 80%;
+    }
+    ul.chosenCharacteristics {
+      width: 80% !important;
+    }
+  }
   //   /CHARACTERS
 
   .site-content {
