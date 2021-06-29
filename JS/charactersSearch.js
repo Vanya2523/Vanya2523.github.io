@@ -95,6 +95,31 @@ searchButton.addEventListener('click', () => {
             objCharacteristics.size_small = true;
         }
     })
+    
+    function checkObject (obj1, obj2) {
+        arr1 = Object.entries(obj1);
+        arr2 = Object.entries(obj2);
+        let z = false;
+        for(i = 0; i < arr1.length; i++) {
+            const x = arr1[i][1];
+            const y = arr2[i][1];
+            if(x == true && y == true) {
+                z = true;
+            }
+            else if (x == true && y == false) {
+                z = false;
+                break;
+            }
+            else if (x == false && y == true) {
+                continue;
+            }
+            else if (x == false && y == false) {
+                continue;
+            }
+        }
+        return z;
+    }
+
     allCharactersAnimalsParents.forEach((elem) => {
         let allCharactersAnimalsObj = {
             hard_training: false,
@@ -128,7 +153,7 @@ searchButton.addEventListener('click', () => {
                 allCharactersAnimalsObj.size_small = true;
             }
         }
-        if (JSON.stringify(allCharactersAnimalsObj) == JSON.stringify(objCharacteristics)) {
+        if (checkObject (objCharacteristics, allCharactersAnimalsObj)) {
             elem.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove('hidden')
         }
         else {
